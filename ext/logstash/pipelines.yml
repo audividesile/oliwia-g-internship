@@ -1,0 +1,4 @@
+- pipeline.id: http_pipeline
+  path.config: "/usr/share/logstash/config/logstash.conf"
+- pipeline.id: counter_pipeline
+  path.config: "/usr/share/logstash/config/logstash-counter.conf"

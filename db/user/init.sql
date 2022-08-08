@@ -1,0 +1,5 @@
+CREATE TABLE public.User (
+    Id UUID PRIMARY KEY NOT NULL,
+    Email VARCHAR NOT NULL,
+    Password VARCHAR NOT NULL
+);

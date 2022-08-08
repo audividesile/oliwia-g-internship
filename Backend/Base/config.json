@@ -1,0 +1,7 @@
+{
+  "ConnectionString": "",
+  "Rabbit": {
+    "HostName": "localhost",
+    "Password": "guest"
+  }
+}

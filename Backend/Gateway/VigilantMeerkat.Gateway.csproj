@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+      <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Base\VigilantMeerkat.Micro.Base.csproj" />
+      <ProjectReference Include="..\VigilantMeerkat.Db\VigilantMeerkat.Db.csproj" />
+    </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,7 @@
+{
+  "ConnectionString": "",
+  "Vault": {
+    "Host": "http://localhost:8201",
+    "Token": "00000000-0000-0000-0000-000000000000"
+  }
+}

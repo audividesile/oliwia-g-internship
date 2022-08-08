@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: central-deployment
+  labels:
+    app: central
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: central
+  template:
+    metadata:
+      labels: 
+        app: central
+    spec:
+      containers:
+        - name: central
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_central
+          ports:
+            - containerPort: 80

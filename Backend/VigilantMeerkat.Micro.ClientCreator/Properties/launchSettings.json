@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VigilantMeerkat.Micro.ClientCreator": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "MICRO_RUN_TYPE": "DEBUG"
+      }
+    }
+  }
+}

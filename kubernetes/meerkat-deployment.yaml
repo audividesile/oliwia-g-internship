@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meerkat-deployment
+  labels:
+    app: meerkat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meerkat
+  template:
+    metadata:
+      labels: 
+        app: meerkat
+    spec:
+      containers:
+        - name: meerkat
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_meerkat
+          ports:
+            - containerPort: 80

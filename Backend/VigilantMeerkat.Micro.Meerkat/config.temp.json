@@ -1,0 +1,10 @@
+{
+    "Rabbit": {
+      "HostName": "{rabbit}",
+      "Password": "guest"
+    },
+    "Token": {
+      "Value": "{token}"
+    }
+  }
+  

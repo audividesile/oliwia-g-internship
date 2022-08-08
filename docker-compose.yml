@@ -1,0 +1,80 @@
+version: "3.8"
+
+services:
+
+  rabbit:
+    image: rabbitmq:3-management
+    ports: 
+      - "15672:15672"
+      - "5672:5672"
+
+  redis:
+    image: redis
+
+  mongo:
+    image: mongo
+
+  userdb:
+    image: postgres:latest
+    environment: 
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/user/:/docker-entrypoint-initdb.d/
+
+  appdb:
+    image: postgres:latest
+    environment: 
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db/app/:/docker-entrypoint-initdb.d/
+
+  auth:
+    restart: always
+    build: 
+      context: Backend
+      dockerfile: Auth-Dockerfile
+    links: 
+      - rabbit
+      - mongo
+      - redis
+
+  central:
+    restart: always
+    build: 
+      context: Backend
+      dockerfile: Central-Dockerfile
+    links: 
+      - rabbit
+      - mongo
+      - redis
+
+  client_creator:
+    restart: always
+    build: 
+      context: Backend
+      dockerfile: Client-Creator-Dockerfile
+    links: 
+      - rabbit
+      - mongo
+      - redis
+
+  presenter:
+    restart: always
+    build: 
+      context: Backend
+      dockerfile: Presenter-Dockerfile
+    links: 
+      - rabbit
+      - mongo
+      - redis
+
+  gateway: 
+    build: 
+      context: Backend
+      dockerfile: API-Gateway-Dockerfile
+    ports:
+      - "11000:80"

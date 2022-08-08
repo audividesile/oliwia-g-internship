@@ -1,0 +1,19 @@
+{
+  "ConnectionString": "Server={userdb};Port=5432;Database=postgres;User Id=postgres;Password=postgres;",
+  "Vault": {
+    "Host": "http://vault:8201",
+    "Token": "00000000-0000-0000-0000-000000000000"
+  },
+  "Rabbit": {
+    "HostName": "{rabbit}",
+    "Password": "guest"
+  },
+  "Mongo": {
+    "LogLevel": "DEBUG",
+    "ConnectionString": "mongodb://{mongo}:27017/"
+  },
+  "Redis": {
+    "ConnectionString": "{redis}"
+  },
+  "AppConnectionString": "Server={appdb};Port=5432;Database=postgres;User Id=postgres;Password=postgres;"
+}

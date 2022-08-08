@@ -1,0 +1,10 @@
+{
+    "Rabbit": {
+      "HostName": "172.17.0.6",
+      "Password": "guest"
+    },
+    "Token": {
+      "Value": "34077f14-eb01-4c53-972a-2af015d15063"
+    }
+  }
+  

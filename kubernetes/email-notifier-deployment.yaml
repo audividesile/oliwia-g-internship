@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-notifier-deployment
+  labels:
+    app: email-notifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-notifier
+  template:
+    metadata:
+      labels: 
+        app: email-notifier
+    spec:
+      containers:
+        - name: email-notifier
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_email_notifier
+          ports:
+            - containerPort: 80

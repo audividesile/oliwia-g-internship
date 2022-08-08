@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-creator-deployment
+  labels:
+    app: client-creator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-creator
+  template:
+    metadata:
+      labels: 
+        app: client-creator
+    spec:
+      containers:
+        - name: client-creator
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_client_creator
+          ports:
+            - containerPort: 80

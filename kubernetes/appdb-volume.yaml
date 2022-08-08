@@ -1,0 +1,29 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: app-db-pv-volume
+  labels:
+    type: local
+    app: app-db
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/kamil/Pulpit/agh/ask/db/app"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: app-db-pv-claim
+  labels:
+    app: app-db
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi

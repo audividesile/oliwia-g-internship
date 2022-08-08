@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+  labels:
+    app: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels: 
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_auth
+          ports:
+            - containerPort: 80

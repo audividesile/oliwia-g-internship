@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifier-deployment
+  labels:
+    app: notifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifier
+  template:
+    metadata:
+      labels: 
+        app: notifier
+    spec:
+      containers:
+        - name: notifier
+          stdin: true
+          tty: true
+          image: theberserkerzx/web_app_notifier
+          ports:
+            - containerPort: 80

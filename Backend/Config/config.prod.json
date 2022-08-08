@@ -1,0 +1,20 @@
+{
+  "ConnectionString": "Server=172.17.0.3;Port=5432;Database=postgres;User Id=postgres;Password=postgres;",
+  "Vault": {
+    "Host": "http://vault:8201",
+    "Token": "00000000-0000-0000-0000-000000000000"
+  },
+  "Rabbit": {
+    "HostName": "172.17.0.6",
+    "Password": "guest"
+  },
+  "Mongo": {
+    "LogLevel": "DEBUG",
+    "ConnectionString": "mongodb://172.17.0.8:27017/"
+  },
+  "Redis": {
+    "ConnectionString": "172.17.0.7"
+  },
+  "AppConnectionString": "Server=172.17.0.9;Port=5432;Database=postgres;User Id=postgres;Password=postgres;"
+}
+
